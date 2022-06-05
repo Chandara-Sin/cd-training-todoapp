@@ -23,7 +23,7 @@ pipeline {
         }
          stage('Build') { 
             steps {
-                sh 'node test' 
+                echo 'node test' 
             }
         }
     }
