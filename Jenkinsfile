@@ -8,7 +8,7 @@ pipeline{
         }
         stage('Login resgistry'){
             steps{
-                sh "docker login -u chandarasin -p chandara123@$"
+                sh "docker login -u chandarasin -p 'chandara123@$'"
             }
         }
         stage('Push Image'){
@@ -28,7 +28,7 @@ pipeline{
                 sh  """
                     ssh -i ~/.ssh/build-server-rsa -tt ec2-user@ec2-13-215-252-7.ap-southeast-1.compute.amazonaws.com "
                         cd todoapp
-                        docker login -u chandarasin -p chandara123@$
+                        docker login -u chandarasin -p 'chandara123@$'
                         docker-compose -f docker-compose-prod.yml pull
                         docker-compose -f docker-compose-prod.yml up -d
                     "
