@@ -21,5 +21,10 @@ pipeline {
                 }
             }
         }
+         stage('Build') { 
+            steps {
+                sh 'node test' 
+            }
+        }
     }
 }
